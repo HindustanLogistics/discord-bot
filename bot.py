@@ -10,6 +10,11 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # ===== BOT READY =====
 @bot.event
 async def on_ready():
+    activity = discord.Activity(
+        type=discord.ActivityType.watching,
+        name="TruckersMP | LTVTC"
+    )
+    await bot.change_presence(status=discord.Status.online, activity=activity)
     print(f"✅ Bot logged in as {bot.user}")
 
 # ===== WELCOME + AUTO ROLE =====
